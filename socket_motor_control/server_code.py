@@ -1,6 +1,8 @@
 #final code to be tested on rover
-##### Attrey Bhatt Codes - https://github.com/attreyabhatt/Reverse-Shell ###########
-# If we are hacker then this file will go to our server that has a static ip address
+#things to change
+#host --> should be same as the motor control codes
+#port --> should be same as the motor control codes
+#also change groundIP to my computer ip
 #importing socket so that we can connect two computer
 import socket
 #importing PySerial and time

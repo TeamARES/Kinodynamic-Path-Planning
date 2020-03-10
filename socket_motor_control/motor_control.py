@@ -1,6 +1,9 @@
 #final codes to be tested on rover
-import socket
+#things to change :
+#host --> put ip adress of pi
+#port --> see if it is same or not
 
+import socket
 s = socket.socket()
 host = socket.gethostname()  #IP Address of the Raspberry pi
 port = 8999            #Must be same as that in server.py
