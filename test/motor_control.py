@@ -10,15 +10,15 @@ port = 9999            #Must be same as that in server.py
 #In client.py we use another way to bind host and port together by using connect function()
 s.connect((host, port))
 print('connected to the host')
-mode = 0;   #0-> Propulsion
-forwardBackwardSpeed = 0;
-leftRightSpeed = 0;
-linear_velocity=2;
-angular_velocity=3;
-width_chassi=4;
-radius_wheel=2;
+mode = 0  #0-> Propulsion
+forwardBackwardSpeed = 0
+leftRightSpeed = 0
+linear_velocity=2
+angular_velocity=3
+width_chassi=4
+radius_wheel=2
 def sendDatatoRaspi():
-    global forwardBackwardSpeed, leftRightSpeed;
+    global forwardBackwardSpeed, leftRightSpeed
     print(forwardBackwardSpeed)
     print(leftRightSpeed)
     stringData = str(mode) + ',' + str(forwardBackwardSpeed*10) + ',' + str(leftRightSpeed*10)
@@ -28,7 +28,7 @@ def sendDatatoRaspi():
     print(checkDataTranfer)
 
 def printSpeeds():
-    global forwardBackwardSpeed, leftRightSpeed;
+    global forwardBackwardSpeed, leftRightSpeed
 
     stringData = str(mode) + ',' + str(forwardBackwardSpeed) + ',' + str(leftRightSpeed)
     print("MODE 0 DATA :",stringData)
@@ -39,9 +39,11 @@ def generate_commands():
     leftRightSpeed = (angular_velocity*width_chassi)/(2*radius_wheel)
     print("generated forwardBackwardSpeed and leftRightSpeed")
 
-
+"""
 #generate linear velocity and angular velocity from path planning module
 #now one more question is left is to how to genrate linear and angular velocity from vx and vy
-#generate_commands()
-#printSpeeds()
-#sendDatatoRaspi()
+generate_commands()
+printSpeeds()
+while(1):
+ sendDatatoRaspi()
+"""
