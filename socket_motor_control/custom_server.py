@@ -2,13 +2,15 @@ import socket
 s = socket.socket()
 s.bind((socket.gethostname(),9999))
 s.listen(5)
+def send_commands(conn,data):
+    conn.send(str.encode(data))
 def read_commands(conn):
     while True:
         dataFromBase = str(conn.recv(1024),"utf-8")
         print("\n Received Data = "+dataFromBase)
         #        print('lengthOfData', len(dataFromBase))
         if(len(dataFromBase) > 3):
-            #send_commands(conn,'YES')
+            send_commands(conn,'YES')
             index1 = dataFromBase.index(',')
             modeStr = dataFromBase[0:index1]
 
