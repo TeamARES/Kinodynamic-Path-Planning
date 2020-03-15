@@ -1,6 +1,6 @@
 import socket
 s = socket.socket()
-s.bind((socket.gethostname(),8999))
+s.bind((socket.gethostname(),9999))
 s.listen(5)
 def read_commands(conn):
     while True:

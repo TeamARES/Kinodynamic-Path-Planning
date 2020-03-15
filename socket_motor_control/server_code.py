@@ -48,7 +48,7 @@ Motor6_clawOpenClose = motor_l298n.motor1_L298n_NOPWM(7,8);#L298n (2 pin)
 #
 #########################################################
 #########################################################
-groundIP = "192.168.185.58"
+groundIP = "192.168.10.1"
 def IPCheckRoutine():
     print(time.ctime())
     response = os.system("ping -c 1 " + groundIP)
@@ -79,7 +79,7 @@ def create_socket():
         global s         #This is socket variable which is named s
 
         #Assigning values to these 3 global variables
-        host = ""
+        host = "192.168.10.103"
         port = 9999
         s = socket.socket()    # Creating a socket and assigning it to s
 

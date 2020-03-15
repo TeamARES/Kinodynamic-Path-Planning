@@ -6,7 +6,7 @@
 import socket
 s = socket.socket()
 host = socket.gethostname()  #IP Address of the Raspberry pi
-port = 9999            #Must be same as that in server.py
+port = 8999            #Must be same as that in server.py
 #In client.py we use another way to bind host and port together by using connect function()
 s.connect((host, port))
 print('connected to the host')
@@ -19,9 +19,8 @@ width_chassi=4;
 radius_wheel=2;
 def sendDatatoRaspi():
     global forwardBackwardSpeed, leftRightSpeed;
-    print(forwardBackwardSpeed)
-    print(leftRightSpeed)
-    stringData = str(mode) + ',' + str(forwardBackwardSpeed*10) + ',' + str(leftRightSpeed*10)
+
+    stringData = str(mode) + ',' + str(forwardBackwardSpeed) + ',' + str(leftRightSpeed)
     s.send(str.encode(stringData))
     # After sending we check if it was recieved or not
     checkDataTranfer = s.recv(1024)
@@ -44,5 +43,4 @@ def generate_commands():
 #now one more question is left is to how to genrate linear and angular velocity from vx and vy
 generate_commands()
 printSpeeds()
-while(1):
- sendDatatoRaspi()
+sendDatatoRaspi()
