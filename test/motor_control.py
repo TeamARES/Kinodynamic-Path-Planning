@@ -42,7 +42,6 @@ def generate_commands():
 
 #generate linear velocity and angular velocity from path planning module
 #now one more question is left is to how to genrate linear and angular velocity from vx and vy
-generate_commands()
-printSpeeds()
-while(1):
- sendDatatoRaspi()
+#generate_commands()
+#printSpeeds()
+#sendDatatoRaspi()
