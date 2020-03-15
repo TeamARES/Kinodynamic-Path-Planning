@@ -47,9 +47,9 @@ port = 9999
 s.connect((host, port))
 print('connected to the host')
 mode = 0;   #0-> Propulsion
-forwardBackwardSpeed = 0;
-leftRightSpeed = 0;
-width_chassi=4;
-radius_wheel=2;
+forwardBackwardSpeed = 0
+leftRightSpeed = 0
+width_chassi=4
+radius_wheel=2
 
 path_planning(x_in, y_in, vx, vy, gx, gy, vgx, vgy, ox, oy)
